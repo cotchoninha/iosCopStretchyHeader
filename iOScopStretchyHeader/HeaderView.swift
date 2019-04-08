@@ -30,17 +30,18 @@ class HeaderView: UICollectionReusableView {
 	//STEP ② - Cool, you got to step 2! So, we're splitting step 2 in 2 parts so you can start with the bigger picture and then apply it to what you actually want, ok?
 	
 	//STEP ②.①
-	//this property animates changes to the view and allows the dynamic modification of those animations.
+	//this property animator (below) animates changes to the view and allows the dynamic modification of those animations.
 	//inside your effect function initialize this property with a built-in UIKit timing curve (try it out setting its parameters with random values to see your output)
 	//you want your block to execute your desired blur effect. ***not working?//2//
 	//there's a property from UIViewPropertyAnimator where you can determine the intensity of your blur, play with it because you'll need for the next step. ***not working?//3//
 	//remember, your animation will only start if you ask it to start.
 	//run your code and see  what happens. If you're getting a blurred image that's great! Now let's apply this to what we really want.
-	//first remove your code that starts the animation and let's jump to the View Controller to make it animate accordinly with your offset. Follow STEP ②.②
+	//first remove your code that starts the animation and lets jump to the View Controller to make it animate according to your offset. Follow STEP ②.②
 	var animator: UIViewPropertyAnimator!
 	
-	//STEP ONE
+	//STEP ①
 	private func setupVisualEffectBlur() {
+		//create an object that implements some complex visual effects, passing an effect to it. After writing your code to implement it, run it and see if your image is blurred. If yes, start working on the animations on Step 2. *** not working? tip below//1//
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

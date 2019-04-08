@@ -52,8 +52,7 @@ class StretchyHeaderCollectionViewController: UICollectionViewController, UIColl
 	
 	//STEP ②.②
 	override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		//again, you need to get your content offset y to play with your effect. If you want print it out to see what this value actually is.
-		//we're going to enter the damn world of math, so have patience now.
+		//again, you need to get your scrollView content offset y to play with your effect. If you want print it out to see what this value actually is.
 		//remember from the previous step you had to play with your animator property to change the intensity of your blur? Yep, so now you'll have to use it.
 		//you have to somehow, access your headerView object within this function in order to set its fraction animator property here.***Stuck? //1//
 		//now that you have your header, find its animator and sets its blur to some random number. Run your code and see the result.

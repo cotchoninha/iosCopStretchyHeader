@@ -20,12 +20,13 @@ class StretchyHeaderCustomLayout: UICollectionViewFlowLayout {
 		
 		//(3)you need to access the collection view frame
 		
-		//(4)you need to set your attributes frame (try it out first with some random numbers to see what happens). Cool, now that you know how it behaves think of a way to track down the content offset y of your collection view for when you're dragging it down. ***there are more tips if needed in the end....//1//
+		//(4)you need to set your attributes frame (try it out first with some random numbers to see what happens). Cool, now that you know how it behaves think of a way to track down the content offset y of your collection view for when you're dragging it down. ***TIP***there are more tips if needed in the end....//1//
 		
-		//(5)considering that you want your image to expand when you drag it down you need to set it's height to the result of the attributes frame height + your content offset Y - run your code to see the behaviour *** not working? check the tip in the bottom of the page//2//
-		//(6)ok, looks good, but you don't want this top image to loose from the top of the screen, so make sure you fix that. *** not working? check the tip in the bottom of the page//3//
+		//(5)considering that you want your image to expand when you drag it down you need to set it's height to the result of the attributes frame height + your content offset Y - run your code to see the behaviour ***TIP*** not working? check the tip in the bottom of the page//2//
 		
-		//(7)YEI, almost there. Run your code and interact with your collection view. Notice that there's a bug in your UI. Can you figure it out  on your own?***tip on the bottom if needed//4//
+		//(6)ok, looks good, but you don't want this top image to loose from the top of the screen, so make sure you fix that. *** not working? ***TIP*** check the tip in the bottom of the page//3//
+		
+		//(7)YEI, almost there. Run your code and interact with your collection view. Notice that there's a bug in your UI. Can you figure it out on your own? ***TIP*** tip on the bottom if needed//4//
 		
 		//(8)//Now jump to the Header View...
 		

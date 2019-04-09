@@ -10,7 +10,6 @@ import UIKit
 
 class StretchyHeaderCustomLayout: UICollectionViewFlowLayout {
 	
-	//MCA: - use the function layoutAttributesForElements to modify the attributes of your header component
 	override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 		let layoutAttributes = super.layoutAttributesForElements(in: rect)
 		

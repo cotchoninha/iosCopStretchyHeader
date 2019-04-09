@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StretchyHeaderCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class StretchyHeaderCollectionViewController: UICollectionViewController {
 	
 	fileprivate let reuseIdentifier = "Cell"
 	fileprivate let headerId = "headerId"
@@ -20,16 +20,14 @@ class StretchyHeaderCollectionViewController: UICollectionViewController, UIColl
 		setupLayout()
 	}
 	
-	
-	fileprivate func setupCollectionView() {
+	private func setupCollectionView() {
 		collectionView.backgroundColor = .white
-		//MCA: - use contentInsetAdjustmentBehavior to tell the collection view to ignore the edges underneath the nodge and also the home button
 		collectionView.contentInsetAdjustmentBehavior = .never
 		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 		collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
 	}
 	
-	fileprivate func setupLayout() {
+	private func setupLayout() {
 		if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
 			layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
 		}
@@ -37,16 +35,6 @@ class StretchyHeaderCollectionViewController: UICollectionViewController, UIColl
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .lightContent
-	}
-	
-	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-		return header
-	}
-	
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		return CGSize(width: view.frame.width, height: 340)
 	}
 	
 	//STEP ②.②
@@ -65,9 +53,19 @@ class StretchyHeaderCollectionViewController: UICollectionViewController, UIColl
 		
 		//(7)GREAT! your code is working, now work out your bonus. Make it non blur when you scroll up. Good luck! ***TIP***//3//
 	}
+}
+
+//***TIPS***//
+
+//1//create a property to be an optional of headerView and in your dequeue element function make it return your headerView (don't forget to cast it)
+
+//2// use the fuction abs on your content offset and divide it by 100
+
+//3//you've already implemented something very very similar before in your code
+
+extension StretchyHeaderCollectionViewController: UICollectionViewDelegateFlowLayout {
 	
 	// MARK: UICollectionViewDataSource
-	
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return 25
 	}
@@ -78,15 +76,17 @@ class StretchyHeaderCollectionViewController: UICollectionViewController, UIColl
 		return cell
 	}
 	
+	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+		return header
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		return CGSize(width: view.frame.width, height: 340)
+	}
+	
+	// MARK: UICollectionViewDelegateFlowLayout
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return CGSize(width: view.frame.width - 2 * padding, height: 50)
 	}
 }
-
-//***TIPS***//
-
-//1//create a property to be an optional of headerView and in your dequeue element function make it return your headerView (don't forget to cast it)
-
-//2// use the fuction abs on your content offset and divide it by 100
-
-//3//you've already implemented something very very similar before in your code

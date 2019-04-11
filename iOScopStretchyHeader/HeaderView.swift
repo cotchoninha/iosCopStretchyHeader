@@ -36,13 +36,13 @@ class HeaderView: UICollectionReusableView {
 	
 	//(3) you want your block to execute your desired blur effect (see tip 2 below if you're stuck).
 	
-	//(4) there's a property from UIViewPropertyAnimator where you can determine the intensity of your blur, play with it because you'll need for the next step (see tip 2 below if you're stuck).
+	//(4) there's a property from UIViewPropertyAnimator where you can determine the intensity of your blur by changing the completion percentage of the animation. Play with it because you'll need for the next step (see tip 3 below if you're stuck).
 	
 	//(5) remember, your animation will only start if you ask it to start.
 	
 	//(6) run your code and see  what happens. If you're getting a blurred image that's great! Now let's apply this to what we really want.
 	
-	//(7) first remove your code that starts the animation and lets jump to the View Controller to make it animate according to your offset. Follow STEP ②.②
+	//(7) first remove your code from items 4 and 5 and lets jump to the View Controller to make it animate according to your offset. Follow STEP ②.②
 	var animator: UIViewPropertyAnimator!
 	
 	
